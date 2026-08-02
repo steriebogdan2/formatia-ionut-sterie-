@@ -5,7 +5,7 @@
  */
 
 export const SITE_NAME = 'Formația Ionut Sterie';
-export const SITE_URL = 'https://formatiaionutsterie.com';
+export const SITE_URL = 'https://formatiaionutsterie.ro';
 export const SITE_LOCALE = 'ro_RO';
 
 export const DEFAULT_TITLE =
