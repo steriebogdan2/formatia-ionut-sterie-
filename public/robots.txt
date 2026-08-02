@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://formatiaionutsterie.com/sitemap.xml
+Sitemap: https://formatiaionutsterie.ro/sitemap.xml
