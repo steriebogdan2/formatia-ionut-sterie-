@@ -1,0 +1,20 @@
+# Netlify / Cloudflare Pages redirect rules.
+#
+# Order matters: the permanent redirects for the previous English URLs must be
+# matched before the catch-all SPA fallback, or every path would simply be
+# served the app shell. The `!` forces the redirect even though the app shell
+# could otherwise answer the request.
+
+/about                    /despre-noi                 301!
+/services                 /servicii                   301!
+/services/weddings        /servicii/nunti             301!
+/services/baptisms        /servicii/botezuri          301!
+/services/majorate        /servicii/majorate          301!
+/services/name-days       /servicii/zile-onomastice   301!
+/services/parties         /servicii/petreceri         301!
+/repertoire               /repertoriu                 301!
+/reviews                  /recenzii                   301!
+
+# SPA fallback: every remaining path is served the app shell so React Router
+# can resolve it (including the 404 page).
+/*                        /index.html                 200

@@ -1,0 +1,24 @@
+# Apache configuration for hosts without Netlify/Vercel support.
+# Mirrors public/_redirects and vercel.json: permanent redirects for the old
+# English URLs first, then the SPA fallback.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 301 redirects from the previous English URLs to the Romanian ones.
+  RewriteRule ^about/?$                /despre-noi                [R=301,L]
+  RewriteRule ^services/weddings/?$    /servicii/nunti            [R=301,L]
+  RewriteRule ^services/baptisms/?$    /servicii/botezuri         [R=301,L]
+  RewriteRule ^services/majorate/?$    /servicii/majorate         [R=301,L]
+  RewriteRule ^services/name-days/?$   /servicii/zile-onomastice  [R=301,L]
+  RewriteRule ^services/parties/?$     /servicii/petreceri        [R=301,L]
+  RewriteRule ^services/?$             /servicii                  [R=301,L]
+  RewriteRule ^repertoire/?$           /repertoriu                [R=301,L]
+  RewriteRule ^reviews/?$              /recenzii                  [R=301,L]
+
+  # SPA fallback: anything that is not a real file or directory renders the app.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

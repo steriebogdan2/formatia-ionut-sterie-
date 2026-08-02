@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
+
+    <!--
+      Icons & install manifest.
+
+      Every href is root-relative, so the same icons resolve on nested routes
+      such as /servicii/nunti. `shortcut icon` is kept for older browsers that
+      ignore the sized variants.
+    -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="Ionut Sterie" />
+    <meta name="application-name" content="Formația Ionut Sterie" />
+
+    <!--
+      Performance: open the connections the first paint depends on, then start
+      the hero image immediately so it is never queued behind the JS bundle.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://i.imgur.com" />
+    <link
+      rel="preload"
+      as="image"
+      href="https://i.imgur.com/JJhl0xt.jpeg"
+      fetchpriority="high"
+    />
+
+    <!--
+      Fonts are linked here rather than @import-ed from the CSS: the preload
+      scanner can then request them while the HTML is still parsing, instead of
+      waiting for the stylesheet to download and parse. Only the weights the
+      site actually renders are requested.
+    -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@400;500;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@400;500;700&display=swap"
+      />
+    </noscript>
+
+    <!-- Primary Meta Tags -->
+    <title>Formația Ionut Sterie - Muzică Populară și de Petrecere din Târgoviște</title>
+    <meta name="title" content="Formația Ionut Sterie - Muzică Populară și de Petrecere din Târgoviște" />
+    <meta name="description" content="Descoperă ritmurile vibrante ale Formației Ionut Sterie, lideri în muzică populară și de petrecere în Târgoviște. Vizitează site-ul pentru melodii captivante și evenimente memorabile!" />
+    <meta name="keywords" content="Formație de petrecere Târgoviște, muzică populară românească, evenimente muzicale tradiționale, nunti spectaculoase, Formația Ionut Sterie" />
+    <link rel="canonical" href="https://formatiaionutsterie.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Formația Ionut Sterie" />
+    <meta property="og:locale" content="ro_RO" />
+    <meta property="og:url" content="https://formatiaionutsterie.com/" />
+    <meta property="og:title" content="Formația Ionut Sterie - Muzică Populară și de Petrecere din Târgoviște" />
+    <meta property="og:description" content="Descoperă ritmurile vibrante ale Formației Ionut Sterie, lideri în muzică populară și de petrecere în Târgoviște. Vizitează site-ul pentru melodii captivante și evenimente memorabile!" />
+    <meta property="og:image" content="https://i.imgur.com/JJhl0xt.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:image:alt" content="Formația Ionut Sterie pe scenă la un eveniment" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://formatiaionutsterie.com/" />
+    <meta name="twitter:title" content="Formația Ionut Sterie - Muzică Populară și de Petrecere din Târgoviște" />
+    <meta name="twitter:description" content="Descoperă ritmurile vibrante ale Formației Ionut Sterie, lideri în muzică populară și de petrecere în Târgoviște. Vizitează site-ul pentru melodii captivante și evenimente memorabile!" />
+    <meta name="twitter:image" content="https://i.imgur.com/JJhl0xt.jpeg" />
+    <meta name="twitter:image:alt" content="Formația Ionut Sterie pe scenă la un eveniment" />
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Formația Ionut Sterie" />
+    <meta name="geo.region" content="RO-DB" />
+    <meta name="geo.placename" content="Târgoviște" />
+
+    <!--
+      Site-wide structured data, shipped in the HTML so crawlers see it without
+      executing the app. Per-page WebPage and BreadcrumbList nodes are injected
+      at runtime by the <Seo> component.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "MusicGroup",
+            "@id": "https://formatiaionutsterie.com/#organization",
+            "name": "Formația Ionut Sterie",
+            "alternateName": "Formația Ionuț Sterie",
+            "url": "https://formatiaionutsterie.com/",
+            "logo": "https://i.imgur.com/JJhl0xt.jpeg",
+            "image": "https://i.imgur.com/JJhl0xt.jpeg",
+            "email": "ionutsterie1979@gmail.com",
+            "telephone": "+40773306802",
+            "genre": ["Muzică populară", "Muzică de petrecere", "Muzică ușoară"],
+            "areaServed": { "@type": "Country", "name": "România" },
+            "sameAs": [
+              "https://www.facebook.com/FormatiaIonutSteriesiMagdalenabanu",
+              "https://www.instagram.com/formatia_ionut_sterie",
+              "https://www.youtube.com/@FormatiaIonutSterie",
+              "https://www.tiktok.com/@formatiaionut.sterie"
+            ]
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://formatiaionutsterie.com/#localbusiness",
+            "name": "Formația Ionut Sterie",
+            "url": "https://formatiaionutsterie.com/",
+            "image": "https://i.imgur.com/JJhl0xt.jpeg",
+            "email": "ionutsterie1979@gmail.com",
+            "telephone": "+40773306802",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Târgoviște",
+              "addressRegion": "Dâmbovița",
+              "addressCountry": "RO"
+            },
+            "areaServed": { "@type": "Country", "name": "România" },
+            "sameAs": [
+              "https://www.facebook.com/FormatiaIonutSteriesiMagdalenabanu",
+              "https://www.instagram.com/formatia_ionut_sterie",
+              "https://www.youtube.com/@FormatiaIonutSterie",
+              "https://www.tiktok.com/@formatiaionut.sterie"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://formatiaionutsterie.com/#website",
+            "url": "https://formatiaionutsterie.com/",
+            "name": "Formația Ionut Sterie",
+            "inLanguage": "ro-RO",
+            "publisher": { "@id": "https://formatiaionutsterie.com/#organization" }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div style="padding: 2rem; font-family: sans-serif; color: #fff; background: #000">
+        <h1 style="color: #d4af37">Formația Ionut Sterie</h1>
+        <p>
+          Acest site are nevoie de JavaScript activat. Ne poți contacta direct la
+          <a style="color: #d4af37" href="tel:+40773306802">+40 773 306 802</a>.
+        </p>
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

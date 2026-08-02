@@ -1,0 +1,88 @@
+/*
+  Fonts are linked from index.html rather than @import-ed here, so the browser's
+  preload scanner can start them during HTML parsing.
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-gold: #d4af37;
+    /* Height of the fixed navbar; shared by scroll offsets and menu sizing. */
+    --nav-height: 4rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Anchor targets stop below the fixed navbar instead of under it. */
+    scroll-padding-top: var(--nav-height);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-black text-white;
+    /* Guards against sub-pixel horizontal scroll from decorative blurred
+       shapes, without clipping the fixed navbar the way overflow-x: hidden
+       would. */
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Media never overflows its column, whatever its intrinsic size. */
+  img,
+  picture,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  /*
+    One consistent focus ring for every interactive element: keyboard users
+    always get a visible indicator, pointer users never see one.
+  */
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: rgb(212 175 55 / 0.3);
+    color: #fff;
+  }
+}
+
+@layer components {
+  /* Vertical rhythm shared by every full-width section. */
+  .section-y {
+    @apply py-16 sm:py-20;
+  }
+
+  /* Standard gap between a section heading block and the content below it. */
+  .heading-gap {
+    @apply mb-12 sm:mb-16;
+  }
+
+  /* The site's page gutter, identical on every section. */
+  .container-page {
+    @apply mx-auto w-full px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
